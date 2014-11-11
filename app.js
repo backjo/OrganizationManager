@@ -195,6 +195,9 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/glass.timeline', accessType: 'offline'}));
 app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }));
 
+app.get('/virtual', function(req, res) {
+  res.render('virtual');
+})
 /**
  * Start Express server.
  */
